@@ -7,27 +7,26 @@ export default {
   title: "Task",
 };
 
-const Template = () => <Task {...args} />;
+const Template = (args) => <Task {...args} />;
 
-export const Default = Template.bind{{}};
+export const Default = Template.bind({});
 Default.args = {
-    task: {
-        id: '1',
-        title: 'whats poppin',
-        state: 'TASK_INBOX',
-        updatedAt: new Date(2020, 0, 1, 9, 0)
-        
-    }
-}
+  task: {
+    id: "1",
+    title: "whats poppin",
+    state: "TASK_INBOX",
+    updatedAt: new Date(2020, 0, 1, 9, 0),
+  },
+};
 
-export const Pinned = Template.bind{{}};
+export const Pinned = Template.bind({});
 Pinned.args = {
-    ...Default.args.task,
-    state: 'TASK_PINNED'
-}
+  ...Default.args.task,
+  state: "TASK_PINNED",
+};
 
-export const Archived = Template.bind{{}}
+export const Archived = Template.bind({});
 Archived.args = {
-    ...Default.args.task,
-    state: 'TASK_ARCHIVED'
-}
+  ...Default.args.task,
+  state: "TASK_ARCHIVED",
+};
