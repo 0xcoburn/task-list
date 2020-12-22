@@ -1,0 +1,29 @@
+import React from "react";
+
+import TaskList from "./TaskList";
+import * as TaskStories from './Task.stories'
+
+export default {
+    title: 'TaskList',
+    component: Tasklist
+    decorators: [story => <div style={{ padding: '3rem'}}>{story()}</div>]
+}
+
+const Template = (args) => <TaskList {...args} />;
+
+export const Default = Template.bind{{}}
+Default.args = {
+    tasks: [
+        {...TaskStories.default.args.task, id: '1', title: 'task 1' }
+        {...TaskStories.default.args.task, id: '2', title: 'task 2' }
+        {...TaskStories.default.args.task, id: '3', title: 'task 3' }
+        {...TaskStories.default.args.task, id: '4', title: 'task 4' }
+        {...TaskStories.default.args.task, id: '5', title: 'task 5' }
+    ]
+}
+
+export const withPinnedTask = Template.bind({})
+withPinnedTask.args = {
+    ...Default.args.tasks.slice(0,5), 
+    {id: '6', title:'task 6 (pinned)', state:'TASK_PINNED'}
+}
