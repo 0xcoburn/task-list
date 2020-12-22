@@ -5,13 +5,13 @@ import * as TaskStories from './Task.stories'
 
 export default {
     title: 'TaskList',
-    component: Tasklist
+    component: Tasklist,
     decorators: [story => <div style={{ padding: '3rem'}}>{story()}</div>]
 }
 
 const Template = (args) => <TaskList {...args} />;
 
-export const Default = Template.bind{{}}
+export const Default = Template.bind({})
 Default.args = {
     tasks: [
         {...TaskStories.default.args.task, id: '1', title: 'task 1' }
@@ -24,6 +24,20 @@ Default.args = {
 
 export const withPinnedTask = Template.bind({})
 withPinnedTask.args = {
+    tasks: [
     ...Default.args.tasks.slice(0,5), 
     {id: '6', title:'task 6 (pinned)', state:'TASK_PINNED'}
+    ]
+}
+
+export const Loading = Template.bind({})
+Loading.args = {
+    tasks: [],
+    loading: true
+}
+
+export const Empty = Template.bind({})
+Empty.args = {
+    ...Loading.args,
+    loading: false
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-const TaskList = ({ loading, tasks, onPinTask, onArchiveTask }) => {
+export default TaskList({ loading, tasks, onPinTask, onArchiveTask }) => {
   const events = {
     onPinTask,
     onArchiveTask,
@@ -24,4 +24,4 @@ const TaskList = ({ loading, tasks, onPinTask, onArchiveTask }) => {
   );
 };
 
-export default TaskList;
+
