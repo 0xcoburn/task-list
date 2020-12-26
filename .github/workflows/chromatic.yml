@@ -1,6 +1,6 @@
 # .github/workflows/chromatic.yml
 # name of our action
-name: 'Chromatic Deployment'
+name: "Chromatic Deployment"
 # the event that will trigger the action
 on: push
 
@@ -19,4 +19,4 @@ jobs:
           # our project token, to see how to obtain it
           # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
           projectToken: sd6d82bcj3a
-          token: ${{ secrets.GITHUB_TOKEN }}name: 'Chromatic Deployment'
+          token: ${{ secrets.GITHUB_TOKEN }}
